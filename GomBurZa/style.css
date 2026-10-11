@@ -1,0 +1,1525 @@
+
+/* ============================
+   GOMBURZA CINEMATIC WEBSITE
+   ============================ */
+
+:root {
+  --bg: #0c0b09;
+  --panel: #17130f;
+  --gold: #c9a66b;
+  --gold-light: #f0d6a0;
+  --cream: #f2eadc;
+  --muted: #b9b0a4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--cream);
+  font-family: "DM Sans", sans-serif;
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.16;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.18' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3,
+.brand,
+.giant-year,
+.execution-date,
+.final-date {
+  font-family: "Cinzel", serif;
+}
+
+h2 {
+  font-size: clamp(2.8rem, 6vw, 6.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  margin: 18px 0 28px;
+}
+
+h2 em {
+  color: var(--gold);
+  font-weight: 400;
+}
+
+p {
+  color: var(--muted);
+}
+
+::selection {
+  background: var(--gold);
+  color: #111;
+}
+
+/* PROGRESS BAR */
+
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: var(--gold);
+  z-index: 120;
+  box-shadow: 0 0 18px var(--gold);
+}
+
+/* NAVIGATION */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 110;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6%;
+  background: rgba(9, 8, 7, 0.55);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(201,166,107,.13);
+}
+
+.brand {
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.brand span {
+  color: var(--gold);
+}
+
+.navbar nav {
+  display: flex;
+  gap: 32px;
+}
+
+.navbar nav a {
+  color: #c6bfb2;
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  transition: color .3s;
+}
+
+.navbar nav a:hover {
+  color: var(--gold);
+}
+
+.nav-year {
+  color: var(--gold);
+  font-family: "Cinzel", serif;
+  font-size: .8rem;
+}
+
+/* ALL SCENES */
+
+.scene {
+  min-height: 100svh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 130px 8%;
+  isolation: isolate;
+}
+
+.scene-content {
+  width: 100%;
+  max-width: 1120px;
+  z-index: 3;
+  position: relative;
+}
+
+.scene-content > p:not(.eyebrow) {
+  max-width: 650px;
+  margin-bottom: 22px;
+  font-size: clamp(1rem, 1.6vw, 1.19rem);
+  line-height: 1.95;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: .73rem;
+  font-weight: 700;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+}
+
+.scene-index {
+  position: absolute;
+  right: 6%;
+  bottom: 35px;
+  font-size: .75rem;
+  letter-spacing: .18em;
+  color: rgba(240,214,160,.5);
+}
+
+/* HERO */
+
+.hero {
+  text-align: center;
+  background: #080706;
+  padding: 160px 7% 100px;
+}
+
+.hero-image {
+  position: absolute;
+  inset: -5%;
+  z-index: -3;
+  background-image:
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/Gomburza.jpg");
+  background-repeat: no-repeat;
+  background-position: center 34%;
+  background-size: cover;
+  filter: sepia(85%) grayscale(50%) brightness(.42);
+  transform: scale(1.06);
+  will-change: transform;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(to bottom,
+      rgba(9,8,7,.52),
+      rgba(9,8,7,.35) 35%,
+      rgba(9,8,7,.96)),
+    radial-gradient(circle at center,
+      transparent 0%,
+      rgba(0,0,0,.72) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+}
+
+.hero-title {
+  font-size: clamp(4.1rem, 12vw, 11.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -.07em;
+  color: var(--cream);
+  text-shadow: 0 10px 50px rgba(0,0,0,.7);
+}
+
+.hero-title span {
+  color: var(--gold);
+}
+
+.hero h2 {
+  font-size: clamp(1.5rem, 3.4vw, 3.1rem);
+  font-weight: 500;
+  margin: 28px 0;
+}
+
+.hero-description {
+  max-width: 550px;
+  margin: 0 auto 30px;
+  font-size: 1.05rem;
+}
+
+.gold-line {
+  width: 74px;
+  height: 2px;
+  margin: 20px auto;
+  background: var(--gold);
+}
+
+.start-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 24px;
+  margin-top: 18px;
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  font-size: .75rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  transition: .3s;
+}
+
+.start-button:hover {
+  color: #111;
+  background: var(--gold);
+  transform: translateY(-3px);
+}
+
+.start-button span {
+  font-size: 1.3rem;
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-size: .64rem;
+  letter-spacing: .23em;
+  color: var(--gold-light);
+}
+
+.scroll-line {
+  width: 1px;
+  height: 42px;
+  background: var(--gold);
+  transform-origin: top;
+  animation: scrollPulse 2s infinite;
+}
+
+.chapter-number {
+  position: absolute;
+  left: 5%;
+  bottom: 45px;
+  color: var(--gold);
+  font-size: .67rem;
+  letter-spacing: .18em;
+}
+
+/* COLONIAL SCENE */
+
+.colonial {
+  background:
+    radial-gradient(ellipse at 75% 40%, #51402b 0%, transparent 49%),
+    linear-gradient(125deg, #12100d, #211b13 60%, #100e0b);
+}
+
+.ambient-circle {
+  position: absolute;
+  width: 46vw;
+  height: 46vw;
+  min-width: 280px;
+  min-height: 280px;
+  right: -10%;
+  top: 17%;
+  border: 1px solid rgba(201,166,107,.2);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 50px rgba(201,166,107,.025),
+    0 0 0 110px rgba(201,166,107,.018);
+}
+
+.background-word {
+  position: absolute;
+  right: -5%;
+  bottom: 5%;
+  font-family: "Cinzel", serif;
+  font-size: clamp(5rem, 15vw, 15rem);
+  font-weight: 900;
+  color: rgba(201,166,107,.035);
+  pointer-events: none;
+}
+
+.highlight-quote {
+  border-left: 2px solid var(--gold);
+  padding-left: 24px;
+  margin-top: 35px;
+  font-family: "Cinzel", serif;
+  color: var(--gold-light);
+  font-style: italic;
+}
+
+/* PRIEST CARDS */
+
+.priests {
+  display: block;
+  background: #100e0b;
+}
+
+.section-heading {
+  max-width: 850px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+.section-heading > p:last-child {
+  max-width: 600px;
+  margin: auto;
+}
+
+.priest-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.priest-card {
+  overflow: hidden;
+  border: 1px solid rgba(201,166,107,.21);
+  background: #1b1712;
+  transition: transform .45s, border-color .45s;
+}
+
+.priest-card:hover {
+  transform: translateY(-12px);
+  border-color: var(--gold);
+}
+
+.portrait {
+  height: 350px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.portrait-one {
+  background:
+    radial-gradient(circle at 50% 28%, #766347, transparent 60%),
+    linear-gradient(#31291f, #0d0b09);
+}
+
+.portrait-two {
+  background:
+    radial-gradient(circle at 50% 28%, #66513b, transparent 60%),
+    linear-gradient(#35251c, #0d0b09);
+}
+
+.portrait-three {
+  background:
+    radial-gradient(circle at 50% 28%, #55503f, transparent 60%),
+    linear-gradient(#29291e, #0d0b09);
+}
+
+.portrait-initial {
+  font-family: "Cinzel", serif;
+  font-size: 12rem;
+  color: rgba(240,214,160,.28);
+  font-weight: 900;
+  transition: transform .5s;
+}
+
+.priest-card:hover .portrait-initial {
+  transform: scale(1.15);
+}
+
+.portrait-label {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  color: var(--gold-light);
+  font-size: .68rem;
+  letter-spacing: .22em;
+}
+
+.priest-info {
+  padding: 34px;
+}
+
+.priest-number {
+  color: var(--gold);
+  font-size: .68rem;
+  letter-spacing: .2em;
+}
+
+.priest-info h3 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin: 12px 0 18px;
+}
+
+.priest-info p {
+  font-size: .93rem;
+  line-height: 1.85;
+}
+
+/* REFORM SCENE */
+
+.reform {
+  background:
+    repeating-linear-gradient(90deg,
+      transparent 0px,
+      transparent 110px,
+      rgba(201,166,107,.027) 111px),
+    linear-gradient(145deg, #16120d, #302315, #100e0b);
+}
+
+.centered {
+  text-align: center;
+}
+
+.centered > p:not(.eyebrow) {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.statement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 50px;
+  color: var(--gold);
+  font-size: .8rem;
+  letter-spacing: .13em;
+}
+
+.statement-line {
+  width: 35px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.statement-dot {
+  opacity: .6;
+}
+
+/* CAVITE MUTINY */
+
+.mutiny {
+  background:
+    radial-gradient(circle at 85% 50%, #4c2219, transparent 55%),
+    linear-gradient(110deg, #0d0b0a, #291511);
+}
+
+.giant-year {
+  color: var(--gold);
+  font-size: clamp(5rem, 18vw, 15rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -.06em;
+  opacity: .85;
+  margin: 20px 0;
+}
+
+.mutiny h2 {
+  margin-top: 0;
+}
+
+.event-note {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+  margin-top: 35px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(201,166,107,.35);
+  color: var(--gold);
+  font-size: .77rem;
+  letter-spacing: .14em;
+}
+
+/* TIMELINE */
+
+.timeline-section {
+  display: block;
+  background:
+    radial-gradient(ellipse at top, #292017, transparent 65%),
+    #0e0c0a;
+}
+
+.timeline {
+  position: relative;
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 20px 0 10px 55px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 25px;
+  bottom: 55px;
+  width: 1px;
+  background: linear-gradient(var(--gold), rgba(201,166,107,.08));
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 65px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -50px;
+  top: 9px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  background: #17130f;
+  box-shadow: 0 0 18px rgba(201,166,107,.25);
+}
+
+.timeline-content {
+  padding: 25px 30px;
+  background: rgba(201,166,107,.045);
+  border: 1px solid rgba(201,166,107,.13);
+}
+
+.timeline-content .date {
+  color: var(--gold);
+  font-size: .77rem;
+  letter-spacing: .18em;
+}
+
+.timeline-content h3 {
+  font-size: 1.6rem;
+  margin: 12px 0;
+}
+
+.timeline-content p {
+  font-size: .96rem;
+}
+
+/* EXECUTION */
+
+.execution {
+  background:
+    radial-gradient(ellipse at 50% 65%, #521c17, transparent 60%),
+    linear-gradient(#150a09, #080707);
+}
+
+.execution-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom,
+      rgba(0,0,0,.1),
+      rgba(0,0,0,.5));
+  pointer-events: none;
+}
+
+.execution-date {
+  display: block;
+  color: var(--gold);
+  font-size: clamp(2.5rem, 6vw, 6rem);
+  font-weight: 700;
+  margin: 25px 0;
+  line-height: 1.2;
+}
+
+.execution h2 {
+  font-size: clamp(2.4rem, 5vw, 5rem);
+}
+
+.memorial-names {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 50px;
+  color: var(--gold-light);
+  font-family: "Cinzel", serif;
+  letter-spacing: .16em;
+}
+
+.memorial-names span {
+  border-bottom: 1px solid rgba(201,166,107,.35);
+  padding-bottom: 12px;
+}
+
+/* LEGACY */
+
+.legacy {
+  background:
+    radial-gradient(circle at 80% 45%, #57472d, transparent 55%),
+    linear-gradient(110deg, #12100c, #271f15);
+}
+
+.legacy blockquote {
+  max-width: 650px;
+  margin-top: 35px;
+  padding-left: 25px;
+  border-left: 2px solid var(--gold);
+  color: var(--gold-light);
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.1rem, 2.3vw, 1.7rem);
+  line-height: 1.8;
+}
+
+/* FINALE */
+
+.finale {
+  text-align: center;
+  background:
+    radial-gradient(ellipse at center, #49341f 0%, #18120e 50%, #080706 100%);
+}
+
+.finale-content {
+  z-index: 2;
+}
+
+.final-date {
+  display: block;
+  margin-top: 35px;
+  color: var(--gold-light);
+  letter-spacing: .22em;
+}
+
+.finale h2 {
+  font-size: clamp(3.5rem, 10vw, 10rem);
+  color: var(--gold);
+  margin: 12px 0;
+}
+
+.final-message {
+  margin-top: 45px;
+  color: var(--cream);
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.7rem);
+}
+
+.restart-link {
+  display: inline-block;
+  margin-top: 55px;
+  color: var(--gold);
+  font-size: .75rem;
+  letter-spacing: .2em;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 8px;
+}
+
+/* FOOTER */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 35px 6%;
+  background: #070605;
+  border-top: 1px solid rgba(201,166,107,.14);
+  color: #9c9182;
+  font-size: .68rem;
+  letter-spacing: .13em;
+}
+
+.footer a {
+  color: var(--gold);
+}
+
+/* ANIMATIONS */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(55px);
+  filter: blur(5px);
+  transition:
+    opacity 1s ease,
+    transform 1s cubic-bezier(.2,.75,.25,1),
+    filter 1s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.priest-card:nth-child(2) {
+  transition-delay: .12s;
+}
+
+.priest-card:nth-child(3) {
+  transition-delay: .24s;
+}
+
+@keyframes scrollPulse {
+  0% {
+    transform: scaleY(.3);
+    opacity: .4;
+  }
+  55% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(.3);
+    opacity: .4;
+  }
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 900px) {
+  .priest-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .navbar nav {
+    gap: 14px;
+  }
+
+  .navbar nav a {
+    font-size: .65rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    height: 65px;
+    padding: 0 5%;
+  }
+
+  .brand {
+    font-size: 1rem;
+  }
+
+  .navbar nav {
+    gap: 12px;
+  }
+
+  .navbar nav a {
+    font-size: .62rem;
+    letter-spacing: 0;
+  }
+
+  .nav-year {
+    display: none;
+  }
+
+  .scene {
+    padding: 105px 7% 95px;
+  }
+
+  .hero {
+    padding: 120px 6% 105px;
+  }
+
+  .hero-title {
+    font-size: clamp(3.5rem, 13vw, 6rem);
+  }
+
+  .hero-description {
+    font-size: .94rem;
+  }
+
+  .scroll-cue,
+  .chapter-number {
+    display: none;
+  }
+
+  .priest-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portrait {
+    height: 250px;
+  }
+
+  .section-heading {
+    margin-bottom: 40px;
+  }
+
+  .statement-line {
+    display: none;
+  }
+
+  .statement {
+    gap: 10px;
+    font-size: .7rem;
+  }
+
+  .timeline {
+    padding-left: 40px;
+  }
+
+  .timeline::before {
+    left: 8px;
+  }
+
+  .timeline-dot {
+    left: -38px;
+  }
+
+  .timeline-content {
+    padding: 20px;
+  }
+
+  .execution-date {
+    font-size: 2.4rem;
+  }
+
+  .memorial-names {
+    gap: 15px;
+    font-size: .8rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+
+
+/* =====================================
+   UPGRADED HISTORICAL PORTRAIT CARDS
+   ===================================== */
+
+.priest-card {
+  position: relative;
+  background: #19140f;
+  border: 1px solid rgba(201,166,107,0.25);
+  border-radius: 6px;
+  overflow: hidden;
+
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease,
+    border-color 0.5s ease;
+}
+
+.priest-card:hover {
+  transform: translateY(-15px);
+  border-color: #c9a66b;
+
+  box-shadow:
+    0 30px 70px rgba(0,0,0,0.6),
+    0 0 35px rgba(201,166,107,0.12);
+}
+
+.portrait {
+  height: 390px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #271d15;
+}
+
+.portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+
+  filter:
+    grayscale(65%)
+    sepia(65%)
+    contrast(1.1)
+    brightness(0.78);
+
+  transition:
+    transform 0.8s ease,
+    filter 0.8s ease;
+}
+
+.priest-card:hover .portrait img {
+  transform: scale(1.12);
+
+  filter:
+    grayscale(15%)
+    sepia(45%)
+    contrast(1.08)
+    brightness(0.95);
+}
+
+.portrait-shade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(10,8,6,0.95),
+      transparent 65%
+    );
+}
+
+.portrait-label {
+  z-index: 2;
+}
+
+.priest-info {
+  padding: 32px;
+}
+
+.priest-info h3 {
+  color: #f2eadc;
+  transition: color 0.3s;
+}
+
+.priest-card:hover h3 {
+  color: #c9a66b;
+}
+
+.priest-years {
+  display: block;
+  margin-top: 25px;
+  padding-top: 15px;
+
+  border-top: 1px solid rgba(201,166,107,0.25);
+
+  color: #c9a66b;
+  font-family: "Cinzel", serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+}
+
+.image-note {
+  font-size: 0.7rem !important;
+  margin-top: 10px;
+  opacity: 0.65;
+}
+
+@media(max-width: 650px) {
+  .portrait {
+    height: 320px;
+  }
+}
+
+
+/* =====================================
+   CINEMATIC CHAPTER INDICATOR
+   ===================================== */
+
+.cinema-indicator {
+  position: fixed;
+  left: 35px;
+  bottom: 35px;
+  z-index: 90;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  padding-left: 15px;
+  border-left: 2px solid #c9a66b;
+
+  pointer-events: none;
+}
+
+.indicator-label {
+  color: #9e978a;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+}
+
+#currentChapter {
+  color: #e7c992;
+  font-family: "Cinzel", serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-shadow: 0 2px 8px #000;
+}
+
+/* BACK TO TOP */
+
+.back-to-top {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 95;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+
+  background: #20180f;
+  border: 1px solid #c9a66b;
+  border-radius: 50%;
+
+  color: #c9a66b;
+  font-size: 1.4rem;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+
+  transition:
+    opacity .35s,
+    visibility .35s,
+    transform .35s,
+    background .35s;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: #c9a66b;
+  color: #100d09;
+}
+
+/* STRONGER CHAPTER ATMOSPHERE */
+
+.scene {
+  transition: background-color .8s ease;
+}
+
+.scene-content.reveal.visible {
+  animation: chapterGlow 1.5s ease;
+}
+
+@keyframes chapterGlow {
+  from {
+    text-shadow: 0 0 28px rgba(201,166,107,.13);
+  }
+
+  to {
+    text-shadow: none;
+  }
+}
+
+@media(max-width: 650px) {
+  .cinema-indicator {
+    left: 15px;
+    bottom: 15px;
+  }
+
+  .back-to-top {
+    right: 15px;
+    bottom: 15px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
+
+/* FIX THE THREE PRIEST CARDS */
+
+.priest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.priest-card {
+  min-width: 0;
+  width: 100%;
+}
+
+.portrait {
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+}
+
+.portrait img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.priest-info {
+  padding: 28px;
+}
+
+.priest-info h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  overflow-wrap: break-word;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  .priest-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* MOBILE */
+@media (max-width: 650px) {
+  .priest-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portrait {
+    height: 350px;
+  }
+}
+
+
+/* =====================================
+   GOMBURZA HERO SECTION - IMPROVED
+   ===================================== */
+
+/* Full-screen introduction */
+.hero {
+  min-height: 100svh;
+  padding: 110px 6% 115px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  text-align: center;
+}
+
+/* Show more of the three priests */
+.hero-image {
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #080706;
+
+  filter:
+    sepia(65%)
+    grayscale(30%)
+    brightness(0.55);
+}
+
+/* Dark overlay makes text readable */
+.hero-overlay {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.50),
+      rgba(0,0,0,0.45) 45%,
+      rgba(0,0,0,0.85)
+    );
+}
+
+/* Reduce title size */
+.hero-title {
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+}
+
+/* Smaller subtitle */
+.hero h2 {
+  font-size: clamp(1.3rem, 2.5vw, 2.3rem);
+  margin: 18px 0;
+}
+
+/* Compact description */
+.hero-description {
+  max-width: 530px;
+  margin: 0 auto 20px;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* Correct button placement */
+.hero .start-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 20px;
+  padding: 13px 25px;
+
+  font-size: 0.75rem;
+  z-index: 5;
+}
+
+/* Move scroll indicator below button */
+.hero .scroll-cue {
+  position: absolute;
+
+  left: 50%;
+  bottom: 18px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+
+  white-space: nowrap;
+  z-index: 4;
+}
+
+/* Shorter scroll line */
+.hero .scroll-line {
+  height: 22px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 650px) {
+  .hero {
+    padding: 110px 6% 95px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.6rem, 12vw, 4rem);
+  }
+
+  .hero h2 {
+    font-size: 1.3rem;
+  }
+
+  .hero-description {
+    font-size: 0.88rem;
+  }
+
+  .hero-image {
+    background-size: contain;
+    background-position: center center;
+  }
+
+  .hero .scroll-cue {
+    display: flex;
+    bottom: 12px;
+  }
+}
+
+/* Smaller laptops or short screens */
+@media (max-height: 750px) and (min-width: 651px) {
+  .hero {
+    padding-top: 85px;
+    padding-bottom: 100px;
+  }
+
+  .hero-title {
+    font-size: clamp(3.3rem, 7vw, 6rem);
+  }
+
+  .hero h2 {
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    margin: 12px 0;
+  }
+
+  .hero-description {
+    margin-bottom: 12px;
+  }
+}
+
+
+
+/* ACADEMIC PROJECT INFORMATION */
+
+.project-info {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at center, #372716, #0c0b09 75%);
+  text-align: center;
+}
+
+.project-info-content {
+  width: 100%;
+  max-width: 780px;
+  margin: auto;
+}
+
+.project-info h2 {
+  color: #c9a66b;
+  font-size: clamp(3rem, 7vw, 6rem);
+  margin-bottom: 10px;
+}
+
+.project-subtitle {
+  color: #f2eadc;
+  font-family: "Cinzel", serif;
+  font-size: 1rem;
+}
+
+.project-details {
+  margin-top: 45px;
+}
+
+.info-label {
+  margin-top: 25px;
+  margin-bottom: 8px;
+  color: #c9a66b;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+}
+
+.project-details h3 {
+  font-family: "Cinzel", serif;
+  color: #f2eadc;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.project-footer-text {
+  margin-top: 55px;
+  color: #a89a87;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+}
+
+
+
+/* =====================================
+   FIX GOMBURZA BACKGROUND IMAGE
+   ===================================== */
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  background: #080706;
+}
+
+/* Display the complete group portrait */
+.hero-image {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/Gomburza.jpg");
+
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  background-color: #080706;
+
+  transform: none !important;
+  filter: grayscale(70%) sepia(45%) brightness(0.65);
+}
+
+/* Dark overlay for readable text */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.35) 0%,
+      rgba(0,0,0,0.35) 45%,
+      rgba(0,0,0,0.80) 100%
+    );
+}
+
+/* Keep heading above image */
+.hero-content {
+  position: relative;
+  z-index: 3;
+}
+
+/* Adjust title size */
+.hero-title {
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  line-height: 1.1;
+}
+
+/* Fix button and scroll indicator */
+.hero .start-button {
+  margin-top: 20px;
+}
+
+.hero .scroll-cue {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+
+
+/* ===================================
+   FINAL HERO IMAGE FIX
+   =================================== */
+
+.hero-image {
+  position: absolute;
+  inset: 0 !important;
+
+  width: 100%;
+  height: 100%;
+
+  background-size: contain !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+
+  transform: none !important;
+
+  background-color: #080706;
+}
+
+/* Reduce dark overlay slightly */
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.30) 0%,
+    rgba(0,0,0,0.45) 55%,
+    rgba(0,0,0,0.85) 100%
+  );
+}
+
+/* Keep button and scroll indicator separate */
+.hero .scroll-cue {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+.hero .start-button {
+  position: relative;
+  margin-top: 20px;
+  z-index: 6;
+}
+
+/* Smaller hero title */
+.hero-title {
+  font-size: clamp(3rem, 7vw, 7rem);
+}

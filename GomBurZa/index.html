@@ -1,0 +1,1646 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#0c0b09">
+
+  <title>
+    GOMBURZA | The Sacrifice That Awakened a Nation
+  </title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- EXISTING CSS AND JAVASCRIPT -->
+  <link rel="stylesheet" href="style.css">
+
+  <script src="script.js" defer></script>
+
+  <!-- UPDATED PAGE STYLES -->
+  <style>
+
+    /* ===================================
+       GLOBAL IMPROVEMENTS
+    =================================== */
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 76px;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    /* ===================================
+       HERO SECTION
+    =================================== */
+
+    #home.hero {
+      position: relative;
+
+      width: 100%;
+      min-height: 100svh;
+
+      padding: 115px 5% 105px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      background: #090806;
+      overflow: hidden;
+    }
+
+    /* ===================================
+       THREE PRIESTS BACKGROUND IMAGE
+    =================================== */
+
+    #home .hero-image {
+      position: absolute;
+
+      inset: 0 !important;
+
+      width: 100%;
+      height: 100%;
+
+      background-image:
+        url("https://commons.wikimedia.org/wiki/Special:FilePath/Gomburza.jpg");
+
+      background-size: contain !important;
+
+      background-position: center center !important;
+
+      background-repeat: no-repeat !important;
+
+      background-color: #090806;
+
+      filter:
+        grayscale(45%)
+        sepia(45%)
+        brightness(0.67);
+
+      transform: none !important;
+
+      will-change: auto;
+    }
+
+    /* ===================================
+       DARK CINEMATIC OVERLAY
+    =================================== */
+
+    #home .hero-overlay {
+      position: absolute;
+
+      inset: 0;
+
+      background: linear-gradient(
+        to bottom,
+
+        rgba(7, 6, 5, 0.40) 0%,
+
+        rgba(7, 6, 5, 0.34) 35%,
+
+        rgba(7, 6, 5, 0.58) 65%,
+
+        rgba(7, 6, 5, 0.90) 100%
+      );
+
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* ===================================
+       HERO CONTENT
+    =================================== */
+
+    #home .hero-content {
+      position: relative;
+      z-index: 3;
+
+      width: 100%;
+      max-width: 1000px;
+
+      margin: 0 auto;
+    }
+
+    #home .eyebrow {
+      color: #c9a66b;
+
+      font-size: clamp(
+        0.65rem,
+        1vw,
+        0.8rem
+      );
+
+      letter-spacing: 0.28em;
+
+      line-height: 1.7;
+    }
+
+    /* ===================================
+       GOMBURZA MAIN TITLE
+    =================================== */
+
+    #home .hero-title {
+      font-family: "Cinzel", serif;
+
+      font-size: clamp(
+        3.2rem,
+        7vw,
+        7rem
+      ) !important;
+
+      font-weight: 900;
+
+      letter-spacing: -0.06em;
+
+      line-height: 1.1;
+
+      margin: 15px 0;
+
+      color: #f2eadc;
+
+      white-space: nowrap;
+    }
+
+    #home .hero-title span {
+      color: #c9a66b;
+    }
+
+    /* ===================================
+       GOLD LINE
+    =================================== */
+
+    #home .gold-line {
+      width: 80px;
+      height: 2px;
+
+      background: #c9a66b;
+
+      margin: 20px auto;
+    }
+
+    /* ===================================
+       HERO SUBTITLE
+    =================================== */
+
+    #home h2 {
+      font-family: "Cinzel", serif;
+
+      font-size: clamp(
+        1.35rem,
+        2.6vw,
+        2.5rem
+      ) !important;
+
+      line-height: 1.3;
+
+      margin: 15px auto 20px;
+
+      color: #f2eadc;
+    }
+
+    /* ===================================
+       HERO DESCRIPTION
+    =================================== */
+
+    #home .hero-description {
+      max-width: 590px;
+
+      margin: 0 auto 20px;
+
+      color: #d7cec2;
+
+      font-size: clamp(
+        0.85rem,
+        1.1vw,
+        1rem
+      );
+
+      line-height: 1.7;
+    }
+
+    /* ===================================
+       DISCOVER THEIR STORY BUTTON
+    =================================== */
+
+    #home .start-button {
+      position: relative;
+
+      z-index: 5;
+
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 20px;
+
+      padding: 14px 25px;
+
+      margin-top: 20px;
+
+      background: rgba(15, 12, 9, 0.65);
+
+      border: 1px solid #c9a66b;
+
+      color: #e9c98b;
+
+      font-size: 0.78rem;
+
+      font-weight: 600;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+
+      text-decoration: none;
+
+      transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+    }
+
+    #home .start-button:hover {
+      background: #c9a66b;
+
+      color: #100d09;
+
+      transform: translateY(-3px);
+    }
+
+    #home .start-button span {
+      font-size: 1.3rem;
+    }
+
+    /* ===================================
+       SCROLL TO EXPLORE
+    =================================== */
+
+    #home .scroll-cue {
+      position: absolute;
+
+      left: 50% !important;
+      bottom: 18px !important;
+      top: auto !important;
+
+      transform: translateX(-50%) !important;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 8px;
+
+      width: max-content;
+
+      color: #e9c98b;
+
+      font-size: 0.68rem;
+
+      letter-spacing: 0.2em;
+
+      white-space: nowrap;
+
+      z-index: 5;
+    }
+
+    #home .scroll-line {
+      width: 1px;
+
+      height: 23px;
+
+      background: #c9a66b;
+    }
+
+    #home .chapter-number {
+      display: none;
+    }
+
+    /* ===================================
+       THREE PRIEST CARDS
+    =================================== */
+
+    #priests .priest-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      gap: 25px;
+
+      width: 100%;
+
+      max-width: 1250px;
+
+      margin: 0 auto;
+    }
+
+    #priests .priest-card {
+      min-width: 0;
+
+      width: 100%;
+
+      overflow: hidden;
+    }
+
+    #priests .portrait {
+      width: 100%;
+
+      height: 370px;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    #priests .portrait img {
+      display: block;
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+      object-position: center top;
+    }
+
+    #priests .priest-info h3 {
+      font-size: clamp(
+        1.6rem,
+        2.5vw,
+        2.2rem
+      );
+
+      overflow-wrap: break-word;
+    }
+
+    /* ===================================
+       ACADEMIC PROJECT INFORMATION
+    =================================== */
+
+    .project-info {
+      min-height: 100svh;
+
+      text-align: center;
+
+      background:
+        radial-gradient(
+          circle at 50% 35%,
+          #342718,
+          #0c0b09 75%
+        );
+    }
+
+    .project-info-content {
+      width: 100%;
+
+      max-width: 760px;
+
+      margin: auto;
+    }
+
+    .project-info h2 {
+      color: #c9a66b;
+
+      font-size: clamp(
+        3rem,
+        7vw,
+        6rem
+      );
+
+      margin: 12px 0;
+    }
+
+    .project-subtitle {
+      color: #f2eadc;
+
+      font-family: "Cinzel", serif;
+    }
+
+    .project-details {
+      margin: 32px auto;
+    }
+
+    .project-details .info-label {
+      margin: 22px 0 5px;
+
+      color: #c9a66b;
+
+      font-size: 0.72rem;
+
+      letter-spacing: 0.19em;
+    }
+
+    .project-details h3 {
+      font-family: "Cinzel", serif;
+
+      font-size: clamp(
+        1rem,
+        2vw,
+        1.35rem
+      );
+
+      line-height: 1.6;
+
+      font-weight: 500;
+
+      color: #f2eadc;
+    }
+
+    .project-footer-text {
+      font-size: 0.83rem;
+
+      letter-spacing: 0.1em;
+    }
+
+    /* ===================================
+       TABLET
+    =================================== */
+
+    @media (max-width: 900px) {
+
+      #priests .priest-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+      #home .hero-title {
+        font-size: 8vw !important;
+      }
+
+    }
+
+    /* ===================================
+       MOBILE
+    =================================== */
+
+    @media (max-width: 650px) {
+
+      #home.hero {
+        padding: 105px 6% 90px;
+      }
+
+      #home .hero-image {
+        background-size: contain !important;
+      }
+
+      #home .hero-title {
+        font-size: clamp(
+          2.5rem,
+          11.5vw,
+          4.5rem
+        ) !important;
+      }
+
+      #home h2 {
+        font-size: clamp(
+          1.1rem,
+          5vw,
+          1.6rem
+        ) !important;
+      }
+
+      #home .hero-description {
+        font-size: 0.85rem;
+      }
+
+      #home .start-button {
+        padding: 12px 18px;
+
+        font-size: 0.7rem;
+      }
+
+      #home .scroll-cue {
+        display: flex !important;
+
+        bottom: 10px !important;
+      }
+
+      #home .scroll-line {
+        height: 13px;
+      }
+
+      #priests .priest-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #priests .portrait {
+        height: 340px;
+      }
+
+    }
+
+    /* ===================================
+       SHORT DESKTOP SCREENS
+    =================================== */
+
+    @media (max-height: 700px)
+      and (min-width: 651px) {
+
+      #home.hero {
+        padding-top: 90px;
+
+        padding-bottom: 75px;
+      }
+
+      #home .hero-title {
+        font-size: clamp(
+          3rem,
+          6vw,
+          5.5rem
+        ) !important;
+      }
+
+      #home h2 {
+        margin: 10px auto;
+      }
+
+      #home .scroll-cue {
+        bottom: 8px !important;
+      }
+
+    }
+
+    /* ===================================
+       ACCESSIBILITY
+    =================================== */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      #home .start-button,
+      #priests .priest-card {
+        transition: none;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ===================================
+       CINEMATIC CHAPTER INDICATOR
+  =================================== -->
+
+  <div class="cinema-indicator" aria-live="off">
+
+    <span class="indicator-label">
+      CURRENT CHAPTER
+    </span>
+
+    <span id="currentChapter">
+      PROLOGUE
+    </span>
+
+  </div>
+
+
+  <!-- ===================================
+       BACK TO TOP
+  =================================== -->
+
+  <a
+    href="#home"
+    class="back-to-top"
+    id="backToTop"
+    aria-label="Return to the beginning"
+  >
+    ↑
+  </a>
+
+
+  <!-- ===================================
+       SCROLL PROGRESS BAR
+  =================================== -->
+
+  <div
+    class="progress"
+    id="progress"
+  ></div>
+
+
+  <!-- ===================================
+       NAVIGATION
+  =================================== -->
+
+  <header class="navbar">
+
+    <a class="brand" href="#home">
+      GOMBURZA<span>.</span>
+    </a>
+
+    <nav aria-label="Main navigation">
+
+      <a href="#history">History</a>
+
+      <a href="#priests">The Priests</a>
+
+      <a href="#timeline">Timeline</a>
+
+      <a href="#legacy">Legacy</a>
+
+    </nav>
+
+    <span class="nav-year">
+      1872
+    </span>
+
+  </header>
+
+
+  <main>
+
+    <!-- ===================================
+         CHAPTER 1 - INTRODUCTION
+    =================================== -->
+
+    <section id="home" class="scene hero">
+
+      <div
+        class="hero-image"
+        aria-hidden="true"
+      ></div>
+
+      <div
+        class="hero-overlay"
+        aria-hidden="true"
+      ></div>
+
+      <div class="hero-content">
+
+        <p class="eyebrow reveal">
+          A STORY OF FAITH, COURAGE & FREEDOM
+        </p>
+
+        <h1 class="hero-title">
+          GOM<span>BUR</span>ZA
+        </h1>
+
+        <div class="gold-line reveal"></div>
+
+        <h2 class="reveal">
+          The Sacrifice That<br>
+          Awakened a Nation
+        </h2>
+
+        <p class="hero-description reveal">
+
+          Three Filipino priests. One tragic execution.
+          A legacy that helped inspire a nation's
+          desire for freedom.
+
+        </p>
+
+        <a
+          href="#history"
+          class="start-button reveal"
+        >
+
+          Discover Their Story
+
+          <span aria-hidden="true">
+            ↓
+          </span>
+
+        </a>
+
+      </div>
+
+      <div class="scroll-cue">
+
+        <span>
+          SCROLL TO EXPLORE
+        </span>
+
+        <div class="scroll-line"></div>
+
+      </div>
+
+      <div class="chapter-number">
+        PROLOGUE / 1872
+      </div>
+
+    </section>
+
+
+    <!-- ===================================
+         CHAPTER 2 - SPANISH RULE
+    =================================== -->
+
+    <section
+      id="history"
+      class="scene colonial"
+    >
+
+      <div class="ambient-circle"></div>
+
+      <div class="scene-content reveal">
+
+        <p class="eyebrow">
+          CHAPTER I — THE BEGINNING
+        </p>
+
+        <h2>
+          A Nation Under<br>
+          <em>Spanish Rule</em>
+        </h2>
+
+        <p>
+
+          During the nineteenth century,
+          the Philippines was governed by Spain.
+
+          Colonial authorities and religious orders
+          held considerable influence over society.
+
+        </p>
+
+        <p>
+
+          Filipino secular priests faced
+          discrimination and struggled for the right
+          to administer parishes, challenging the
+          privileges of powerful religious orders.
+
+        </p>
+
+        <p class="highlight-quote">
+
+          "Before a nation could demand freedom,
+          its people had to recognize injustice."
+
+        </p>
+
+      </div>
+
+      <div
+        class="background-word"
+        aria-hidden="true"
+      >
+        COLONIAL
+      </div>
+
+      <span class="scene-index">
+        01 / 07
+      </span>
+
+    </section>
+
+
+    <!-- ===================================
+         CHAPTER 3 - THE THREE PRIESTS
+    =================================== -->
+
+    <section
+      id="priests"
+      class="scene priests"
+    >
+
+      <div class="section-heading reveal">
+
+        <p class="eyebrow">
+          CHAPTER II — THE THREE PRIESTS
+        </p>
+
+        <h2>
+          Remember Their Names
+        </h2>
+
+        <p>
+
+          Three priests whose lives became
+          part of the Philippines' struggle
+          for justice and reform.
+
+        </p>
+
+      </div>
+
+
+      <div class="priest-grid">
+
+
+        <!-- MARIANO GOMEZ -->
+
+        <article class="priest-card reveal">
+
+          <div class="portrait portrait-one">
+
+            <img
+              src="https://commons.wikimedia.org/wiki/Special:FilePath/Portrait_of_Fr._Mariano_Gomes_(Bacoor_Image).png?width=650"
+              alt="Historical portrait of Father Mariano Gomez"
+              loading="lazy"
+            >
+
+            <div class="portrait-shade"></div>
+
+            <span class="portrait-label">
+              THE ELDER
+            </span>
+
+          </div>
+
+          <div class="priest-info">
+
+            <span class="priest-number">
+              01 / GOM
+            </span>
+
+            <h3>
+              Mariano<br>Gómez
+            </h3>
+
+            <p>
+
+              A respected parish priest of
+              Bacoor, Cavite, who defended
+              the rights of Filipino
+              secular clergy.
+
+            </p>
+
+            <span class="priest-years">
+              1799 — 1872
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <!-- JOSE BURGOS -->
+
+        <article class="priest-card reveal">
+
+          <div class="portrait portrait-two">
+
+            <img
+              src="https://commons.wikimedia.org/wiki/Special:FilePath/Portrait_of_Padre_Jose_Burgos_(published_1913).jpg"
+              alt="Historical portrait of Father Jose Burgos"
+              loading="lazy"
+            >
+
+            <div class="portrait-shade"></div>
+
+            <span class="portrait-label">
+              THE REFORMER
+            </span>
+
+          </div>
+
+          <div class="priest-info">
+
+            <span class="priest-number">
+              02 / BUR
+            </span>
+
+            <h3>
+              José<br>Burgos
+            </h3>
+
+            <p>
+
+              An educated and outspoken
+              Filipino priest who advocated
+              equality and reforms within
+              the Catholic Church.
+
+            </p>
+
+            <span class="priest-years">
+              1837 — 1872
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <!-- JACINTO ZAMORA -->
+
+        <article class="priest-card reveal">
+
+          <div class="portrait portrait-three">
+
+            <img
+              src="https://commons.wikimedia.org/wiki/Special:FilePath/Jacinto_Zamora_statue_and_historical_marker.jpg?width=900"
+              alt="Commemorative statue of Father Jacinto Zamora"
+              loading="lazy"
+            >
+
+            <div class="portrait-shade"></div>
+
+            <span class="portrait-label">
+              THE MARTYR
+            </span>
+
+          </div>
+
+          <div class="priest-info">
+
+            <span class="priest-number">
+              03 / ZA
+            </span>
+
+            <h3>
+              Jacinto<br>Zamora
+            </h3>
+
+            <p>
+
+              A Filipino secular priest
+              from Pandacan, Manila,
+              who was accused and executed
+              alongside Gómez and Burgos.
+
+            </p>
+
+            <span class="priest-years">
+              1835 — 1872
+            </span>
+
+            <p class="image-note">
+
+              Image: Commemorative statue
+              of Jacinto Zamora, not a
+              nineteenth-century portrait.
+
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+      <span class="scene-index">
+        02 / 07
+      </span>
+
+    </section>
+
+
+    <!-- ===================================
+         CHAPTER 4 - REFORM
+    =================================== -->
+
+    <section
+      id="reform"
+      class="scene reform"
+    >
+
+      <div class="scene-content centered reveal">
+
+        <p class="eyebrow">
+          CHAPTER III — A CALL FOR JUSTICE
+        </p>
+
+        <h2>
+
+          Their Fight Was<br>
+
+          For <em>Equality</em>
+
+        </h2>
+
+        <p>
+
+          The secularization controversy
+          centered on who should administer
+          Philippine parishes.
+
+          Filipino secular priests sought
+          fair treatment and greater
+          opportunities in church leadership.
+
+        </p>
+
+        <div class="statement">
+
+          <span class="statement-line"></span>
+
+          <strong>JUSTICE</strong>
+
+          <span class="statement-dot">•</span>
+
+          <strong>EQUALITY</strong>
+
+          <span class="statement-dot">•</span>
+
+          <strong>DIGNITY</strong>
+
+          <span class="statement-line"></span>
+
+        </div>
+
+      </div>
+
+      <span class="scene-index">
+        03 / 07
+      </span>
+
+    </section>
+
+
+    <!-- ===================================
+         CHAPTER 5 - CAVITE MUTINY
+    =================================== -->
+
+    <section
+      id="mutiny"
+      class="scene mutiny"
+    >
+
+      <div class="scene-content reveal">
+
+        <p class="eyebrow">
+          CHAPTER IV — THE TURNING POINT
+        </p>
+
+        <div class="giant-year">
+          1872
+        </div>
+
+        <h2>
+          The Cavite Mutiny
+        </h2>
+
+        <p>
+
+          On January 20, 1872,
+          an uprising occurred at
+          the Cavite naval arsenal.
+
+          Spanish colonial authorities
+          connected the incident to
+          a wider alleged conspiracy.
+
+        </p>
+
+        <p>
+
+          Gómez, Burgos, and Zamora
+          were accused of involvement,
+          although the case against them
+          remains deeply disputed in
+          historical accounts.
+
+        </p>
+
+        <div class="event-note">
+
+          <span>
+            JANUARY 20, 1872
+          </span>
+
+          <span>
+            CAVITE, PHILIPPINES
+          </span>
+
+        </div>
+
+      </div>
+
+      <span class="scene-index">
+        04 / 07
+      </span>
+
+    </section>
+
+
+    <!-- ===================================
+         CHAPTER 6 - HISTORICAL TIMELINE
+    =================================== -->
+
+    <section
+      id="timeline"
+      class="scene timeline-section"
+    >
+
+      <div class="section-heading reveal">
+
+        <p class="eyebrow">
+          CHAPTER V — THE FINAL DAYS
+        </p>
+
+        <h2>
+          A Path Toward Tragedy
+        </h2>
+
+        <p>
+
+          Follow the events that
+          changed Philippine history.
+
+        </p>
+
+      </div>
+
+
+      <div class="timeline">
+
+
+        <!-- TIMELINE 1 -->
+
+        <article class="timeline-item reveal">
+
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-content">
+
+            <span class="date">
+              JANUARY 20, 1872
+            </span>
+
+            <h3>
+              The Cavite Mutiny
+            </h3>
+
+            <p>
+
+              An uprising takes place
+              at the Cavite naval arsenal
+              under Spanish colonial rule.
+
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- TIMELINE 2 -->
+
+        <article class="timeline-item reveal">
+
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-content">
+
+            <span class="date">
+              EARLY 1872
+            </span>
+
+            <h3>
+              Arrest and Accusation
+            </h3>
+
+            <p>
+
+              The three Filipino priests
+              are arrested and accused
+              of participating in a conspiracy.
+
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- TIMELINE 3 -->
+
+        <article class="timeline-item reveal">
+
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-content">
+
+            <span class="date">
+              FEBRUARY 1872
+            </span>
+
+            <h3>
+              Trial and Sentence
+            </h3>
+
+            <p>
+
+              Following a controversial
+              military trial, the priests
+              are sentenced to death.
+
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- TIMELINE 4 -->
+
+        <article class="timeline-item reveal">
+
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-content">
+
+            <span class="date">
+              FEBRUARY 17, 1872
+            </span>
+
+            <h3>
+              The Execution
+            </h3>
+
+            <p>
+
+              Gómez, Burgos, and Zamora
+              are executed by garrote
+              at Bagumbayan, Manila.
+
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+      <span class="scene-index">
+        05 / 07
+      </span>
+
+    </section>
+
+
+    <!-- ===================================
+         CHAPTER 7 - EXECUTION
+    =================================== -->
+
+    <section
+      id="execution"
+      class="scene execution"
+    >
+
+      <div class="execution-glow"></div>
+
+      <div class="scene-content centered reveal">
+
+        <p class="eyebrow">
+          CHAPTER VI — BAGUMBAYAN, MANILA
+        </p>
+
+        <span class="execution-date">
+
+          17 FEBRUARY 1872
+
+        </span>
+
+        <h2>
+
+          Three Lives Ended.<br>
+
+          <em>A Legacy Began.</em>
+
+        </h2>
+
+        <p>
+
+          At Bagumbayan, the three priests
+          were executed by garrote.
+
+          Their deaths became a powerful
+          symbol of injustice
+          under colonial rule.
+
+        </p>
+
+        <div class="memorial-names">
+
+          <span>GÓMEZ</span>
+
+          <span>BURGOS</span>
+
+          <span>ZAMORA</span>
+
+        </div>
+
+      </div>
+
+      <span class="scene-index">
+        06 / 07
+      </span>
+
+    </section>
+
+
+    <!-- ===================================
+         CHAPTER 8 - LEGACY
+    =================================== -->
+
+    <section
+      id="legacy"
+      class="scene legacy"
+    >
+
+      <div class="scene-content reveal">
+
+        <p class="eyebrow">
+          CHAPTER VII — THE LEGACY
+        </p>
+
+        <h2>
+
+          Their Story<br>
+
+          <em>Did Not End.</em>
+
+        </h2>
+
+        <p>
+
+          The martyrdom of GOMBURZA
+          helped inspire a new generation
+          of Filipino reformers
+          and nationalists.
+
+        </p>
+
+        <p>
+
+          José Rizal honored the three
+          priests by dedicating his novel
+          <em>El Filibusterismo</em>
+          to their memory.
+
+          Their names remain an enduring
+          symbol of the demand for
+          dignity and justice.
+
+        </p>
+
+        <blockquote>
+
+          Their sacrifice became part
+          of the awakening of Filipino
+          national consciousness.
+
+        </blockquote>
+
+      </div>
+
+      <span class="scene-index">
+        07 / 07
+      </span>
+
+    </section>
+
+
+    <!-- ===================================
+         FINAL TRIBUTE
+    =================================== -->
+
+    <section
+      id="finale"
+      class="scene finale"
+    >
+
+      <div class="finale-content reveal">
+
+        <p class="eyebrow">
+          IN REMEMBRANCE
+        </p>
+
+        <span class="final-date">
+          FEBRUARY 17, 1872
+        </span>
+
+        <h2>
+          GOMBURZA
+        </h2>
+
+        <div class="gold-line"></div>
+
+        <p>
+
+          Mariano Gómez · José Burgos ·
+          Jacinto Zamora
+
+        </p>
+
+        <p class="final-message">
+
+          Three names remembered.<br>
+
+          One story that continues to inspire.
+
+        </p>
+
+        <a
+          href="#home"
+          class="restart-link"
+        >
+
+          ↑ RETURN TO THE BEGINNING
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================
+         ACADEMIC PROJECT INFORMATION
+    =================================== -->
+
+    <section
+      id="project-info"
+      class="scene project-info"
+    >
+
+      <div class="project-info-content reveal">
+
+        <p class="eyebrow">
+          ACADEMIC PROJECT PRESENTATION
+        </p>
+
+        <h2>
+          GOMBURZA
+        </h2>
+
+        <p class="project-subtitle">
+
+          The Sacrifice That Awakened a Nation
+
+        </p>
+
+        <div class="gold-line"></div>
+
+
+        <div class="project-details">
+
+          <p class="info-label">
+            COURSE / SECTION
+          </p>
+
+          <h3>
+            PCK 2 — Educational Technology
+          </h3>
+
+
+          <p class="info-label">
+            PREPARED BY
+          </p>
+
+          <h3>
+            Cherry Ann Ayson
+          </h3>
+
+          <h3>
+            Jaymee Yaldua
+          </h3>
+
+
+          <p class="info-label">
+            SCHOOL
+          </p>
+
+          <h3>
+
+            Saint Louis Anne Colleges<br>
+
+            of San Pedro, Laguna
+
+          </h3>
+
+
+          <p class="info-label">
+            SUBMITTED TO
+          </p>
+
+          <h3>
+            Mr. Tabusao
+          </h3>
+
+        </div>
+
+
+        <p class="project-footer-text">
+
+          An Interactive Historical
+          Storytelling Website
+
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ===================================
+       FOOTER
+  =================================== -->
+
+  <footer class="footer">
+
+    <span>
+
+      GOMBURZA — AN INTERACTIVE HISTORY
+
+    </span>
+
+    <span>
+
+      EDUCATIONAL STORYTELLING PROJECT
+
+    </span>
+
+    <a
+      href="https://npdc.gov.ph/gomburza-marker/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+
+      HISTORICAL REFERENCE ↗
+
+    </a>
+
+
+    <div
+      class="image-credits"
+      style="
+        width:100%;
+        font-size:.7rem;
+        margin-top:10px;
+        line-height:1.8;
+      "
+    >
+
+      Image sources:
+
+      <a
+        href="https://commons.wikimedia.org/wiki/File:Portrait_of_Fr._Mariano_Gomes_(Bacoor_Image).png"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Mariano Gómez
+      </a>
+
+      ·
+
+      <a
+        href="https://commons.wikimedia.org/wiki/File:Portrait_of_Padre_Jose_Burgos_(published_1913).jpg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        José Burgos
+      </a>
+
+      ·
+
+      <a
+        href="https://commons.wikimedia.org/wiki/File:Jacinto_Zamora_statue_and_historical_marker.jpg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Jacinto Zamora statue
+      </a>
+
+      ·
+
+      <a
+        href="https://commons.wikimedia.org/wiki/File:Gomburza.jpg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GOMBURZA group image
+      </a>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
